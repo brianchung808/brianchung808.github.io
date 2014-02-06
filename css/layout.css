@@ -1,0 +1,51 @@
+* 
+{
+
+  width: 960px;
+
+}
+
+header
+{
+
+  display: block;
+  background-color: lightgrey;
+
+  /* shadow effects */
+  -moz-box-shadow: 0 0 12px -2px #000;
+  -webkit-box-shadow: 0 0 12px -2px #000;
+  box-shadow: 0 0 12px -2px #000;
+
+}
+
+/* 'Brian Chung' */
+header h1 
+{
+
+  font-weight: bold;
+  font-family: 'Cantarell', sans-serif;
+  font-size: 40px;
+  width: 400px;
+  float: left;
+
+
+}
+
+#social 
+{
+
+  width: 560px;
+  float: right;
+
+}
+
+#social a:link, a:visited
+{
+
+  display: block;
+  text-decoration: none;
+  text-transform: lowercase;
+
+
+
+}
