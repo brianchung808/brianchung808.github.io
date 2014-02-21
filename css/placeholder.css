@@ -10,28 +10,7 @@ nav {
 }
 
 .top-buffer { margin-top:20px; }
-/*
-#wrapper {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-
-#header {
-  letter-spacing: 2px;
-  font-family: 'Quicksand', sans-serif;
-  width: 85%;
-  border-bottom: 8px solid #60A1B3;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-*/
 #first {
   color: #323232;
   font-size: 80px;
@@ -41,46 +20,6 @@ nav {
   color: black;
   font-size: 30px;
 }
-/*
-nav ul {
-  text-align: right;
-  width: 150px;
-  float: left;
-  position: relative;
-  top: 40px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-nav a {
-  display: block;
-  padding: 2px 2px 2px 2px;
-}
-
-nav li {
-  padding: 6px;
-  font-size: 24px;
-
-}
-
-a, a:link, a:visited {
-  text-decoration: none;
-  color: #7D7D7D;
-}
-
-nav a:hover {
-  color: #60A1B3;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-#content {
-  width: inherit;
-  top: 200px;
-}
-*/
 
 html,
 body {
