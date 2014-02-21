@@ -8,13 +8,12 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/placeholder.css" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+
 
 </head>
 
 <body>
+  <div id="wrap">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -55,41 +54,88 @@
       </div><!-- /.navbar-collapse -->
     </nav>
 
-
     <div id="wrapper" class="container">
-        <div class="row">
-            <div class="col-md-2 col-md-offset-5"></div>
-            <header  class="col-md-8 col-md-offset-2">
-                <img src="resources/images/header.png" class="img-responsive">
-              <!--<h1 id="header">
-                <span id="first">Brian</span> <span id="last">Chung</span>
-              </h1>-->
-            </header>            
-            <div class="col-md-2 col-md-offset-5"></div>
+
+      <div class="row" style="background-image: url('resources/images/doge.jpg'); background-image:repeat;">
+        <div class="col-md-2 col-md-offset-5"></div>
+
+        <div class="col-md-8 col-md-offset-3" >
+          <img src="resources/images/me_crop.png" class="img-responsive desaturate"/>
         </div>
 
-        <div class="row">
-            <div class="col-md-2 col-md-offset-5"></div>
+        <div class="col-md-2 col-md-offset-5"></div>
 
-            <div id="content" class="col-md-8 col-md-offset-2">
-                 <!-- <a id="about" >About</a> -->
-                <a href="http://www.github.com/brianchung808"> 
-                  <img id="profile_pic" src="resources/images/me.jpg" title="Hi there ^_^" alt="Picture of me" class="desaturate img-responsive"/>
-                </a>
-            </div> <!-- End content -->
-            <div class="col-md-2 col-md-offset-5"></div>
-        </div>
+      </div> <!-- end row -->
 
-        <footer class="row">
-            <div id="footer_links">
-              <a href="http://www.github.com/brianchung808" target="_blank"><img class="logo" src="resources/images/github.png"/></a>
-              <a href="http://www.linkedin.com/in/bchung1" target="_blank"><img class="logo" src="resources/images/linkedin.png"/></a>
+
+
+      <div class="row top-buffer">
+        <div class="col-md-6">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">About</h3>
             </div>
-        </footer>
+            <div class="panel-body">
+              I love coding and creating things. <br><br>
+              You can find me at UCSD for school, back home on Oahu during vacations, and at Intuit in Summer 2014.<br><br>
+              You can also find me on <a href="www.github.com/brianchung808">Github</a>.<br><br>
+              Hamartia: Too much bootstrap, terrible image cropping skills, unnecessary shibe.
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Skills</h3>
+            </div>
+
+            <div class="panel-body">
+              I can program (at least I believe so). <br><br>
+              <strong>Programming Languages:</strong><br>
+
+              <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>C/C++</li>
+                <li>Ruby</li>
+              </ul>
+
+              <strong>Tools:</strong><br>
+              Android SDK, Git, Ruby on Rails, Bootstrap
+            </div> <!-- end panel-body -->
+          </div> <!-- end panel -->
+        </div>
+
+
+
+      </div> <!-- end row -->
+      <div class="row">
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5"></div>
+
+
+        <div class="col-md-2 col-md-offset-5"></div>
+      </div>
+
+
     </div> <!-- End wrapper -->
 
+  </div> <!-- end wrap -->
 
+  <footer id="footer">
+    <div class="container">
+      <div><h5>Brian Chung &copy 2014</h5></div>
+    </div>
+  </footer>
 
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>
