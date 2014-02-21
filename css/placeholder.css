@@ -8,6 +8,8 @@ body {
 nav {
   padding-right: 10px;
 }
+
+.top-buffer { margin-top:20px; }
 /*
 #wrapper {
   width: 500px;
