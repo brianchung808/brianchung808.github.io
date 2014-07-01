@@ -17,13 +17,12 @@ $(document).ready(function(){
     var result;
     var repos;
 
-
     $.ajax({
         url: user_url + username,
         cache: true,
-        dataType: "jsonp",
-        success: function(response) {
-            result = response['data'];
+        crossDomain: true,
+        success: function(data, textStatus, jqXHR) {
+            result = data;
         }
     }).then(function() {
         var LOG = false;
@@ -33,8 +32,12 @@ $(document).ready(function(){
         var repos_url = result.repos_url;
         if(LOG) console.log('repos url ' + repos_url);
 
-        $.getJSON(repos_url + "?callback=?", null, function(response) {
-            repos = response['data'];
+        $.ajax({
+            url: repos_url,
+            crossDomain: true,
+            success: function(data, textStatus, jqXHR) {
+                repos = data;
+            }
         }).then(function() {
             /* when repos ready, set the information */
 
@@ -45,7 +48,16 @@ $(document).ready(function(){
                 if(LOG) console.log("Repo " + i + " url: " + repos[i].html_url);
                 var name = repos[i].name;
                 var url = repos[i].html_url;
-                $dropdown.append('<li><a target="_blank" href="' +  url + '">' + name + '</a></li>')
+                var li = $("<li>");
+                var a = $("<a>");
+
+                a.attr({
+                    target: '_blank',
+                    href: url
+                }).text(name);
+
+                li.append(a);
+                $dropdown.append(li);
             }
 
         });
