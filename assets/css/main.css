@@ -1,16 +1,7 @@
-/*
- * Author: Carlos Alvarez
- * URL: http://alvarez.is
- *
- * Project Name: STANLEY - Free Bootstrap 3 Theme
- * Version: 1.0
- * URL: http://blacktie.co
- */
-
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
-  	background-color: #ffffff;
+  	background-color: black;
   	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -48,7 +39,7 @@ p {
 
 /* Links */
 a {
-    color: #f93120;
+    color: #f00000;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -95,12 +86,16 @@ a:after {
 }
 
 .navbar-inverse {
-	background-color: #f93120;
-	border-color: #f00000;
+	background-color: #F2F2F2;
+	border-top: 4px solid #f00000;
+	border-bottom-color: #F2F2F2;
 }
 
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+	border-color: #f00000;
+}
 .navbar-inverse .navbar-nav > li > a {
-	color: white;
+	color: #f00000;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
@@ -109,12 +104,16 @@ a:after {
 
 .navbar-brand {
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 28px;
 	letter-spacing: 2px;
 }
 
+a.navbar-brand:hover {
+	color: #222222 !important;
+}
+
 .navbar-inverse .navbar-brand {
-	color: white;
+	color: #f00000;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -123,6 +122,10 @@ a:after {
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
 	background-color: #f00000;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+	color: #f00000;
 }
 
 .progress-bar-theme {
@@ -184,68 +187,3 @@ a:after {
 }
 
 
-
-/* Blog Date*/
-bd {
-	font-size: 12px;
-	text-transform: uppercase;
-	color: #d2d2d2;
-	font-weight: 700;
-}
-
-/* Blog Author*/
-ba {
-	font-size: 12px;
-	text-transform: uppercase;
-}
-
-/* Blog Quote */
-.bq {
-	font-size: 22px;
-	padding-top: 30px;
-}
-
-/* Blog Tags */
-bt {
-	font-size: 12px;
-}
-
-/* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
-/* Effects also are controled by hover.zoom.js */
-.zoom { 
-    display:block; 
-    position:relative; 
-    overflow:hidden; 
-    background:transparent url(../img/loader.gif) no-repeat center;
-}
-
-
-    .zoomOverlay {
-        position:absolute;
-        top:0; left:0;
-        bottom:0; right:0;
-        display:none;
-        background-image:url(../img/zoom.png);
-        background-repeat:no-repeat;
-        background-position:center;
-    }
-
-.zoom2 {
-	opacity: 1;
-}
-
-.zoom2:hover {
-	opacity: 0.5;
-}
-
-/* glyphicon Configuration */
-
-.glyphicon {
-	font-size: 40px;
-	color: #1abc9c;
-}
-
-.logo {
-  width: 16px;
-  height: 16px;
-}
