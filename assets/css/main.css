@@ -38,7 +38,7 @@ p {
 }
 
 /* Links */
-#footer a, #footer a:hover {
+a {
     color: #f66666;
     word-wrap: break-word;
 
