@@ -92,7 +92,7 @@ a:after {
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-	border-color: #f00000;
+	border-color: transparent;
 }
 .navbar-inverse .navbar-nav > li > a {
 	color: #f00000;
@@ -118,6 +118,14 @@ a.navbar-brand:hover {
 
 .navbar-inverse .navbar-toggle {
 	border-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+	background-color: #d9d9d9;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+	background-color: #f00000;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
