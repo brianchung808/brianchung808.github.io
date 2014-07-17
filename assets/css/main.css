@@ -33,13 +33,6 @@ p {
     font-size: 18px;
 }
 
-p#description {
-	background-color: #eaeaea;
-	padding: 20px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 15px;
-}
-
 .centered {
     text-align: center;
 }
