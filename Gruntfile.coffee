@@ -27,5 +27,5 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-clean'
 
 
-	grunt.registerTask 'default', ['less', 'uglify']
-	grunt.registerTask 'compile', ['clean', 'default']
+	grunt.registerTask 'compile', ['less', 'uglify']
+	grunt.registerTask 'default', ['clean', 'compile']
