@@ -37,18 +37,33 @@ module.exports = (grunt) ->
 				options:
 					banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
 
-
 		clean: ['dest', 'index.html']
 
+	# task packages we are using
+	taskPackages = [
+		'grunt-contrib-less'
+		'grunt-contrib-uglify'
+		'grunt-contrib-clean'
+		'grunt-newer'
+		'grunt-contrib-htmlmin'
+	]
 
-	grunt.loadNpmTasks 'grunt-contrib-less'
-	grunt.loadNpmTasks 'grunt-contrib-uglify'
-	grunt.loadNpmTasks 'grunt-contrib-clean'
-	grunt.loadNpmTasks 'grunt-newer'
-	grunt.loadNpmTasks 'grunt-contrib-htmlmin'
+	# load the npm tasks
+	grunt.loadNpmTasks task for task in taskPackages 
 
+	grunt.registerTask 'compile', [
+		'newer:less:dev' 
+		'newer:uglify:dist'
+		'newer:htmlmin:dev'
+	]
 
+	grunt.registerTask 'dist', [
+		'clean'
+		'newer:less:dist'
+		'newer:uglify:dist'
+		'newer:htmlmin:dist'
+	]
 
-	grunt.registerTask 'compile', ['newer:less:dev', 'newer:uglify:dist', 'newer:htmlmin:dev']
-	grunt.registerTask 'dist', ['clean', 'newer:less:dist', 'newer:uglify:dist', 'newer:htmlmin:dist']
-	grunt.registerTask 'default', ['compile']
+	grunt.registerTask 'default', [
+		'compile'
+	]
