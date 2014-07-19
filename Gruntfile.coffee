@@ -3,7 +3,7 @@ module.exports = (grunt) ->
 		pkg: grunt.file.readJSON 'package.json'	
 
 		less: 
-			production:
+			prod:
 				options:
 					paths: ['src/less']
 					cleancss: true
@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 					'dest/css/index.min.css': ['src/less/index.less']
 
 		uglify:
-			production:
+			prod:
 				files:
 					'dest/js/index.min.js': ['src/js/index.js']
 				options:
@@ -25,7 +25,9 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-contrib-clean'
+	grunt.loadNpmTasks 'grunt-newer'
 
 
-	grunt.registerTask 'compile', ['less', 'uglify']
-	grunt.registerTask 'default', ['clean', 'compile']
+	grunt.registerTask 'compile', ['newer:less', 'newer:uglify:prod']
+	grunt.registerTask 'production', ['clean', 'compile']
+	grunt.registerTask 'default', ['compile']
