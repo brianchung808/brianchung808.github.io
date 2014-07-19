@@ -1,6 +1,7 @@
 module.exports = (grunt) ->
 	grunt.initConfig 
 		pkg: grunt.file.readJSON 'package.json'	
+		
 		less: 
 			production:
 				options:
@@ -8,7 +9,7 @@ module.exports = (grunt) ->
 					cleancss: true
 
 				files:
-					'dest/css/main.css': ['src/less/main.less']
+					'dest/css/index.css': ['src/less/index.less']
 
 		uglify:
 			production:
@@ -17,7 +18,14 @@ module.exports = (grunt) ->
 				options:
 					banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
 
+
+		clean: ['dest']
+
+
 	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
+	grunt.loadNpmTasks 'grunt-contrib-clean'
+
 
 	grunt.registerTask 'default', ['less', 'uglify']
+	grunt.registerTask 'compile', ['clean', 'default']
