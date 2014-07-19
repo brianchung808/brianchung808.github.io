@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
 	grunt.initConfig 
 		pkg: grunt.file.readJSON 'package.json'	
-		
+
 		less: 
 			production:
 				options:
@@ -9,7 +9,7 @@ module.exports = (grunt) ->
 					cleancss: true
 
 				files:
-					'dest/css/index.css': ['src/less/index.less']
+					'dest/css/index.min.css': ['src/less/index.less']
 
 		uglify:
 			production:
