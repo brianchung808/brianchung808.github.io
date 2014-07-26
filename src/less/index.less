@@ -1,9 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
 @mainColor: #f00000;
 @secondaryColor: #f66666;
 @backgroundColor: white;
 @footerColor: #606060;
 @mainFont: 'Lato';
+@secondaryFont: 'Roboto';
 
 .transition(@color, @time) {
     -webkit-transition: @color @time ease-in, background @time ease-in;
@@ -42,6 +45,8 @@ p {
     line-height: 32px;
     margin-bottom: 25px;
     font-size: 18px;
+	font-family: @secondaryFont;
+	font-weight: 300;
 }
 
 .centered {
