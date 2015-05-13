@@ -17,5 +17,8 @@
   },
   "homepage": "https://github.com/brianchung808/brianchung808.github.io",
   "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-minify-html": "^1.0.2",
+    "gulp-minify-inline": "^0.1.0"
   }
 }
