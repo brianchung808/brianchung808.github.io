@@ -11,14 +11,16 @@
 
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
     <!--<link href="dest/css/index.min.css" rel="stylesheet">-->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <style>
       html, body {
         -webkit-text-size-adjust: none;
         width: 100%;
+        overflow-x: hidden;
         margin: 0;
         padding: 0;
+        cursor: default;
       }
 
       html {
@@ -157,6 +159,11 @@
         display: inline;
       }
 
+      h1.header {
+        background-color: #F5F5F5;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+      }
+
       h2 {
         color: #000000;
         font-size: 1rem;
@@ -200,6 +207,16 @@
         }
       }
 
+      @media only screen and (max-width: 568px) {
+        html {
+          -webkit-text-size-adjust: none;
+          font-size: 8px;
+        }
+        .grid {
+          width: 100%;
+          margin-left: 2rem;
+        }
+      }
       .ack {
         font-size: 1rem;
       }
@@ -214,6 +231,7 @@
           <span class="name">
             <span itemprop="givenName">Brian</span>
             <span itemprop="familyName">Chung</span>
+            <i class="fa fa-street-view"></i>
           </span>
           <h1>
       </div>
@@ -227,31 +245,31 @@
 
     <div class="row">
       <div class="col8">
-        <h1>Education</h1>
+        <h1 class="header">Education</h1>
       </div>
     </div>
 
     <div class="row">
       <div class="col8">
-        Bachelor of Science in Computer Science from <a href="http://ucsd.edu" class="ucsd">University of California, San Diego</a>.
+        Bachelor of Science in Computer Science from <a itemprop="alumniOf" href="http://ucsd.edu" class="ucsd">University of California, San Diego</a>.
       </div>
     </div>
 
     <div class="row">
       <div class="col8">
-        <h1>Networks</h1>
+        <h1 class="header">Networks</h1>
       </div>
     </div>
 
     <div class="row">
       <div class="col8">
-        <a href="http://github.com/brianchung808" class="github">GitHub</a>, <a href="http://twitter.com/brianchung808" class="twitter">Twitter</a>, <a href="http://linkedin.com/in/bchung1" class="linkedin">LinkedIn</a>.
+        <a href="http://github.com/brianchung808" class="github">GitHub <i class="fa fa-github"></i></a>, <a href="http://twitter.com/brianchung808" class="twitter">Twitter <i class="fa fa-twitter"></i></a>, <a href="http://linkedin.com/in/bchung1" class="linkedin">LinkedIn <i class="fa fa-linkedin-square"></i></a>.
       </div>
     </div>
 
     <div class="row">
       <div class="col8 ack">
-        <span class="small">*subject to change to <span class="badjoke">xxxxx.js</span> in ~3 weeks in line with JS trends.</span><br/>
+        <span class="small"><i class="fa fa-asterisk"></i> subject to change to <span class="badjoke">xxxxx.js</span> in ~3 weeks because javascript.</span><br/>
         <span>Inspired by (read: shamelessly ripped off from) <a class="neeraj" href="http://www.neeraj.io/">neeraj</a>.</span>
       </div>
     </div>
