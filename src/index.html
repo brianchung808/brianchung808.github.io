@@ -9,87 +9,226 @@
 
     <title>Brian Chung</title>
 
-    <link href="lib/css/bootstrap.css" rel="stylesheet">
-    <link href="dest/css/index.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+    <!--<link href="dest/css/index.min.css" rel="stylesheet">-->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <style>
+      html, body {
+        -webkit-text-size-adjust: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-style: normal:
+        font-size: 1rem;
+        line-height: 2rem;
+        background-color: #FFFFFF;
+        color: #999999;
+      }
+
+      .grid {
+        margin: 0 auto 2rem auto;
+        padding: 0 2rem 2rem 0;
+        width: 100%;
+        max-width: 1024px;
+        box-sizing: border-box;
+      }
+
+      .row {
+        clear: both;
+        margin: 0;
+        padding: 2rem 0 0 0;
+        width: 100%;
+      }
+
+      /* empty block elem after each row */
+      .row:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .col8 {
+        box-sizing: border-box;
+        min-height: 1rem;
+        margin: 0;
+        padding: 0;
+        float: left;
+        display: block;
+        width: 100%;
+      }
+
+      a {
+        font-weight: 500;
+        text-decoration: none;
+        padding: 0 0 .0rem 0;
+        color: #000000;
+        border-bottom: .25rem solid #000000;
+      }
+
+      a.twitter {
+        color: #5EA9DD;
+        border-bottom: .25rem solid #5EA9DD;
+      }
+
+      a.twitter:hover {
+        color: #3592D4;
+      }
+
+      a.linkedin {
+        color: #0274B3;
+        border-bottom: .25rem solid #0274B3;
+      }
+
+      a.linkedin:hover {
+        color: #015C8D;
+      }
+
+      a.neeraj {
+        border-bottom: .15rem solid #000000;
+      }
+
+      a.github:hover, a.neeraj:hover {
+        color: #525252;
+      }
+
+      span.small {
+        font-size: 1rem;
+      }
+
+      span.intuit {
+        color: #365EBF;
+        background-color: #EBF8FF;
+        border-bottom: .3rem solid #365EBF;
+        padding: 0 0.5rem 0 0.5rem;
+      }
+
+      span.node {
+        color: #7FBD42;
+        background-color: #F5FAF0;
+        border-bottom: .25rem solid #7FBD42;
+        padding: 0 0.5rem 0 0.5rem;
+      }
+
+      span.react {
+        color: #66D9F8;
+        background-color: #ECFAFE;
+        border-bottom: .25rem solid #66D9F8;
+        padding: 0 0.5rem 0 0.5rem;
+      }
+
+      span.badjoke {
+        color: #088BAF;
+        background-color: #ECFAFE;
+        border-bottom: .25rem solid #66D9F8;
+        padding: 0 0.5rem 0 0.5rem;
+      }
+
+      h1, h2, .large {
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+
+      h1 {
+        font-weight: 300;
+        color: #000000;
+        display: inline;
+      }
+
+      h2 {
+        color: #000000;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 3rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      ::selection {
+        background: #000000;
+        color: #999999;
+      }
+
+      ::-moz-selection {
+        background: #000000;
+        color: #999999;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        html {
+          -webkit-text-size-adjust: none;
+          font-size: 12px;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        html {
+          -webkit-text-size-adjust: none;
+          font-size: 11px;
+        }
+        .grid {
+          width: 100%;
+        }
+      }
+
+      .ack {
+        font-size: 1rem;
+      }
+    </style>
   </head>
-  <body>
 
-    <!-- Static navbar -->
-    <div class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">BRIAN CHUNG</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-github"></i> Github<b class="caret"></b></a>
-	            <ul class="dropdown-menu" id="github_dropdown">
-	              <li><a href="http://www.github.com/brianchung808" target="_blank"><b>brianchung808</b></a></li>
-	              <li class="divider"></li>
-	            </ul>
-	          </li>
-
-	          <li><a href="https://www.linkedin.com/in/bchung1" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a></li>
-	          <li><a href="https://drive.google.com/file/d/0B45WHQom3ltLWkNYMHgyZkF3Wlk/edit?usp=sharing" target="_blank"><i class="fa fa-file-text-o"></i> Resume</a></li>
-	           <li><a href="mailto:brianchung23@gmail.com"><i class="fa fa-paper-plane-o"></i> Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+<body>
+  <div class="grid large" itemscope itemtype="http://schema.org/Person">
+    <div class="row">
+      <div class="col8">
+        <h1>
+          <span itemprop="givenName">Brian</span>
+          <span itemprop="familyName">Chung</span>
+        <h1>
       </div>
     </div>
 
-	<!-- +++++ Welcome Section +++++ -->
-	<div id="ww">
-	    <div class="container">
-			<div class="row">
-				<div id="description" class="col-lg-8 col-lg-offset-2 centered box-shadow">
-					<img src="assets/img/user.png" alt="Brian">
-					<h1>Brian Chung</h1>
-          <div class="header-separator"></div>
-					<p>              
-						I love coding and hacking ideas together. <br><br>
-						Full stack developer but I lean towards backend development. Capable Node.js developer for the quick and dirty; capable JVM-based language developer (Java, Scala) for the sake of type-safety. Huge fan of expressive languages that treat functions like the first class citizens that they are and don't restrict you to OO land.<br><br>
-        		Find me at UCSD for college, back home on Oahu during vacations, at Intuit in San Diego during Summer 2014, and always on <a href="https://www.github.com/brianchung808">Github</a>.<br><br>
-      		</p>
-				</div><!-- /col-lg-8 -->
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /ww -->
-	
-	<!-- +++++ Footer Section +++++ -->
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8">
-					<h4>Brian Chung &copy; 2014</h4>
-				</div>
-        <div class="col-sm-4">
-          <h4>Links:</h4>
-            <ul>
-              <li><a target="_blank" href="http://www.facebook.com/brianchung808">FACEBOOK</a></li>
-              <li><a target="_blank" href="http://www.twitter.com/brianchung808">TWITTER</a></li>
-            </ul>
-        </div>
-			</div>
-		</div>
-	</div>
-	
-    <script src="lib/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="dest/js/index.min.js"></script>
+    <div class="row">
+      <div class="col8">
+        <span itemprop="jobTitle">Software Engineer</span> at <span itemprop="affiliation" href="http://intuit.com" class="intuit">Intuit</span>. Javascript developer with focus on <span class="node">Node.js</span> & <span class="react">React</span>*. 
+      </div>
+    </div>
 
-  </body>
+    <div class="row">
+      <div class="col8">
+        <h1>Networks</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col8">
+        <a href="http://github.com/brianchung808" class="github">GitHub</a>, <a href="http://twitter.com/brianchung808" class="twitter">Twitter</a>, <a href="http://linkedin.com/in/bchung1" class="linkedin">LinkedIn</a>.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col8">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col8 ack">
+        <span class="small">*subject to change to <span class="badjoke">xxxxx.js</span> in ~3 weeks in line with JS trends.</span><br/>
+        <span>Inspired by (read: shamelessly ripped off from) <a class="neeraj" href="http://www.neeraj.io/">neeraj</a>.</span>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
