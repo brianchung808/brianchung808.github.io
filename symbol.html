@@ -1,0 +1,136 @@
+<head>
+  <link
+    href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+    rel="stylesheet"
+  />
+
+  <script type="module">
+    import { Grid, html } from "https://unpkg.com/gridjs?module";
+
+    const data = [];
+    const grid = new Grid({
+      columns: [
+        { id: "symbol", name: "Symbol" },
+        {
+          id: "average",
+          name: "Cost Basis",
+        },
+        {
+          id: "open",
+          name: "Open",
+        },
+        {
+          id: "close",
+          name: "Close",
+        },
+      ],
+      data,
+    }).render(document.querySelector("#wrapper"));
+
+    async function getNewBasis() {
+      const date = document.querySelector("input#date").value;
+      const symbol = document.querySelector("input#symbol").value;
+
+      console.log(date, symbol);
+
+      const stockData = await getStockData(symbol, date);
+
+      console.log(stockData);
+
+      if (!stockData) {
+        document.querySelector("#wrapper").innerText = "Try again in a minute";
+        return;
+      }
+
+      data.push({ symbol: `${symbol} ${date}`, ...stockData });
+
+      grid
+        .updateConfig({
+          data,
+        })
+        .forceRender();
+    }
+
+    function getDate(date, offset) {
+      date = new Date(date);
+      date.setDate(date.getDate() + offset);
+
+      return date.toISOString().split("T")[0];
+    }
+
+    async function makeRequest(symbol, date) {
+      return fetch(
+        `https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}?from=${getDate(
+          date,
+          -3
+        )}&to=${getDate(date, 3)}&apikey=BaQvnX0GW1LX1EzzVYVRJ9XlEdGZXUNn`
+      );
+    }
+
+    async function getResponse(response, date) {
+      // found data
+      const { historical } = await response.json();
+
+      const data = historical.find((h) => h.date === date);
+
+      if (!data) {
+        // get previous + next
+        function findByOffset(list, date, offset) {
+          const newDate = getDate(date, offset);
+
+          const res = list.find((h) => h.date === newDate);
+
+          if (!res) {
+            return findByOffset(list, newDate, offset);
+          }
+
+          return res;
+        }
+
+        function findPrevious(list) {
+          return findByOffset(list, date, -1);
+        }
+
+        function findNext(list) {
+          return findByOffset(list, date, 1);
+        }
+
+        const previous = findPrevious(historical);
+        const next = findNext(historical);
+
+        const prevAverage = (previous.open + previous.close) / 2;
+        const nextAverage = (next.open + next.close) / 2;
+
+        return {
+          open: `${previous.date}: average: ${prevAverage}, open: ${previous.open}, close: ${previous.close}`,
+          close: `${next.date}: average: ${nextAverage}, open: ${next.open}, close: ${next.close}`,
+          average: (nextAverage + prevAverage) / 2,
+        };
+      }
+
+      const { close, open } = data;
+
+      // If open date, average of close and open
+      return { close, open, average: (open + close) / 2 };
+    }
+
+    async function getStockData(symbol, date) {
+      const response = await makeRequest(symbol, date);
+
+      return getResponse(response, date);
+    }
+
+    document
+      .querySelector("button#submit")
+      .addEventListener("click", getNewBasis);
+  </script>
+</head>
+
+<body>
+  <h1>Hi lily</h1>
+  <input id="date" type="date" value="2023-12-13" />
+  <input id="symbol" placeholder="Symbol" value="NOW" />
+  <button id="submit">Get New Basis</button>
+
+  <div id="wrapper"></div>
+</body>
